@@ -44,7 +44,7 @@ btnFile.addEventListener("click", () => {
     if (file.value == "") {
         dataDetails.innerHTML = "Debe ingresar un archivo";
     } else {
-        save.style.display = "block";
+        
         sortCutList();
         
     while (cutList.length > 0) {
@@ -188,29 +188,5 @@ function insertHtml() {
     `;
 }
 
-//guardar html a pdf
-
-
-const save = document.getElementById("save");
-save.addEventListener("click", () => {
-    var html = document.body;
-    var pdf = new jsPDF(
-        //orientacion
-        "l",
-        //tamaño
-        "pt",
-
-    );
-    
-    pdf.addHTML(html, function () {
-        pdf.save('sample-file.pdf');
-        
-    }
-    );
-}
-);
-
-
-//configurar jspdf
 
 
